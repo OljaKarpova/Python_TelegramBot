@@ -20,7 +20,7 @@ def values(message: telebot.types.Message):
 @bot.message_handler(content_types=['text', ])
 def convert(message: telebot.types.Message):
     try:
-      values = message.text.split()
+      values = message.text.split() # в скринкасте разделителем элементов списка значился один пробел, я убрала разделитель, иначе два и более пробела между параметрами приводили к ошибке
 
       if len(values) > 3:
         raise ConvertionException('Неверное количество параметров.')
