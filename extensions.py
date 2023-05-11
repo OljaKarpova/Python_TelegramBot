@@ -20,7 +20,7 @@ class CryptoConverter:
         try:
             base_ticker = keys[base.lower()]
         except KeyError:
-            raise ConvertionException(f'Не удалось обработать валюту "{base}".')
+            raise ConvertionException(f'Не удалось обработать валюту "{base}".\nСписок доступных валют - команда /values')
 
         try:
             amount = float(amount)
