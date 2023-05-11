@@ -28,7 +28,7 @@ class CryptoConverter:
             raise ConvertionException(f'Не удалось обработать количество "{amount}"')
 
         if amount <= 0:
-             raise ValueError(f'Количество переводимой валюты не может быть отрицательным числом')
+             raise ValueError(f'Количество переводимой валюты не может быть отрицательным числом или нулём')
 
         r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}')
         total_base = json.loads(r.content)[keys[base.lower()]]
